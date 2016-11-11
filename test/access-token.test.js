@@ -10,17 +10,17 @@ var loopback = require('../');
 var extend = require('util')._extend;
 var session = require('express-session');
 
+var app;
 var Token = loopback.AccessToken.extend('MyToken');
 var ds = loopback.createDataSource({ connector: loopback.Memory });
 Token.attachTo(ds);
 var ACL = loopback.ACL;
 
-beforeEach(function() {
-  this.app = app = loopback();
-});
-
 describe('loopback.token(options)', function() {
-  beforeEach(createTestingToken);
+  beforeEach(function(done) {
+    app = loopback();
+    createTestingToken.call(this, done);
+  });
 
   it('should populate req.token from the query string', function(done) {
     createTestAppAndRequest(this.token, done)

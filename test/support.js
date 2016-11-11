@@ -12,7 +12,6 @@ expect = require('chai').expect;
 loopback = require('../');
 memoryConnector = loopback.Memory;
 GeoPoint = loopback.GeoPoint;
-app = null;
 TaskEmitter = require('strong-task-emitter');
 request = require('supertest');
 var RemoteObjects = require('strong-remoting');

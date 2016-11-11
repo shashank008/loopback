@@ -10,6 +10,7 @@ var defineModelTestsWithDataSource = require('./util/model-tests');
 var PersistedModel = loopback.PersistedModel;
 
 var describe = require('./util/describe');
+require('./helpers/loopback-testing-helper');
 
 describe('Model / PersistedModel', function() {
   defineModelTestsWithDataSource({

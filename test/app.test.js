@@ -15,16 +15,16 @@ var describe = require('./util/describe');
 var expect = require('chai').expect;
 var it = require('./util/it');
 
-beforeEach(function() {
-  this.app = app = loopback();
-});
-
 describe('app', function() {
+  var app;
+  beforeEach(function() {
+    app = loopback();
+  });
+
   describe.onServer('.middleware(phase, handler)', function() {
-    var app, steps;
+    var steps;
 
     beforeEach(function setup() {
-      app = loopback();
       steps = [];
     });
 
