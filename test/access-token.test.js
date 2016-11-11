@@ -9,6 +9,7 @@ var contextMiddleware = require('loopback-context').perRequest;
 var loopback = require('../');
 var extend = require('util')._extend;
 var session = require('express-session');
+require('./support');
 
 var Token = loopback.AccessToken.extend('MyToken');
 var ds = loopback.createDataSource({ connector: loopback.Memory });
