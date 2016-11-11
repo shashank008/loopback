@@ -1936,7 +1936,7 @@ describe('User', function() {
       it('keeps sessions AS IS if firstName is added using `replaceAttributes`', function(done) {
         user.replaceAttributes({
           email: currentEmailCredentials.email,
-          password: currentEmailCredentials.password,
+          password: user.password,
           firstName: 'Candy',
         }, function(err, userInstance) {
           if (err) return done(err);
@@ -1949,7 +1949,7 @@ describe('User', function() {
           id: user.id,
           firstName: 'Loay',
           email: currentEmailCredentials.email,
-          password: currentEmailCredentials.password,
+          password: user.password,
         }, function(err, userInstance) {
           if (err) return done(err);
           assertUntouchedTokens(done);
@@ -1962,7 +1962,7 @@ describe('User', function() {
           {
             firstName: 'Miroslav',
             email: currentEmailCredentials.email,
-            password: currentEmailCredentials.password,
+            password: user.password,
           }, function(err, userInstance) {
             if (err) return done(err);
             assertUntouchedTokens(done);
